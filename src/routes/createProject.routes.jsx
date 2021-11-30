@@ -1,31 +1,14 @@
-const createProject = () => {
-    return (
-        <div>
-            <div>
-                <form action="POST">
-                    <div>
-                        <label htmlFor="">Título del proyecto</label>
-                    <input type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="">Objetivo general</label>
-                    <input type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="">Objetivo especifico</label>
-                    <input type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="">Lider</label>
-                    <input type="text" />
-                    </div>
-                    <div>
-                        <button type="submit">Crear</button>
-                    </div>
+import CreateProject from '../components/createProject.commponents'
+import client from '../apollo/apollo.client';
+import {ApolloProvider} from "@apollo/client";
 
-                </form>
-            </div>
-        </div>
+const newProject = () => {
+    return (
+        <ApolloProvider client={client}>
+            <CreateProject/>
+        </ApolloProvider>
     )
+
 }
-export default createProject;
+ 
+export default newProject;
