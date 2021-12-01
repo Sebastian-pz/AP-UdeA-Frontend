@@ -6,6 +6,7 @@ import profile from "./routes/profile.routes"
 import dashboard from "./routes/dashboard.routes";
 import logout from "./routes/logout.routes";
 import createProject from "./routes/createProject.routes";
+import createUser from "./routes/singUp.routes";
 
 
 
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/logout" exact={true} component={logout}/>
                     <Route path="/dashboard" exact={true} component={dashboard}/>
                     <Route path="/newproject" exact={true} component={createProject}/>
+                    <Route path="/createuser" exact={true} component={createUser}/>
                 </div>
             </div>
         </Router>
