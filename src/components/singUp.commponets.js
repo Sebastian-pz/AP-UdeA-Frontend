@@ -55,7 +55,7 @@ const SingUp = () => {
                 </div>
                 <div>
                     <label>Ingrese su correo electrónico</label>
-                    <input ref={email => user.email = email} placeholder="Correo" required/>
+                    <input type="email" ref={email => user.email = email} placeholder="Correo" required/>
                 </div>
                 <div>
                     <label>Ingrese su contraseña</label>
