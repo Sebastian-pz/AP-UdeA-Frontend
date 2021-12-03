@@ -7,6 +7,8 @@ import dashboard from "./routes/dashboard.routes";
 import logout from "./routes/logout.routes";
 import createProject from "./routes/createProject.routes";
 import createUser from "./routes/singUp.routes";
+import login from "./routes/login.routes";
+import activateUser from "./routes/activateUser.routes";
 
 
 
@@ -22,6 +24,8 @@ function App() {
                     <Route path="/dashboard" exact={true} component={dashboard}/>
                     <Route path="/newproject" exact={true} component={createProject}/>
                     <Route path="/createuser" exact={true} component={createUser}/>
+                    <Route path="/login" exact={true} component={login}/>
+                    <Route path="/admin/activate" exact={true} component={activateUser}/>
                 </div>
             </div>
         </Router>
