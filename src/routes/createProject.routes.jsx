@@ -1,4 +1,4 @@
-import CreateProject from '../components/createProject.commponents'
+import CreateProject from '../components/createproject/createProject.component'
 import client from '../apollo/apollo.client';
 import {ApolloProvider} from "@apollo/client";
 

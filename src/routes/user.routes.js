@@ -1,15 +1,14 @@
-import Projects from '../components/projects/projects.component';
 import client from '../apollo/apollo.client';
 import {ApolloProvider} from "@apollo/client";
+import React from "react";
+import UserComponent from "../components/users/user.component";
 
-const projects = () => {
+const User = () => {
     return (
         <ApolloProvider client={client}>
-            <div>
-                <Projects/>
-            </div>
+            <UserComponent/>
         </ApolloProvider>
     )
 }
 
-export default projects;
+export default User;

@@ -1,4 +1,4 @@
-import SingUp from '../components/singUp.commponets';
+import SingUp from '../components/createuser/singUp.component';
 import client from '../apollo/apollo.client';
 import {ApolloProvider} from "@apollo/client";
 
