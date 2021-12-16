@@ -34,7 +34,7 @@ const InactiveUsers = () => {
     const table = data.getInactiveUser.map(({id,name,role,accountStatus}) => (
         (<div id="userbody" >
             <div id="user">
-                <table className="table" id="table">
+                <table className="table" id="tablita">
                     <tr id="row">
                         <td id="col1">{id}</td>
                         <td id="col2">{name}</td>

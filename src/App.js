@@ -17,10 +17,10 @@ import login from "./routes/login.routes";
 import activateUser from "./routes/activateUser.routes";
 import users from "./routes/users.routes";
 import viewProject from "./routes/viewProject.routes";
-import MyProjects from "./routes/myprojects.routes";
+import MyProjectsRoute from "./routes/myprojects.routes";
 import ProjectL from "./routes/allProjects.routes";
 import DashboardProjects from "./routes/changeProjectStatus.routes";
-
+import PendingUsersLeader from "./routes/ActivateUserProject.routes";
 
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
                     <Switch>
                         <Route path="/home" exact={true} component={home}/>
                         <Route path="/projects" exact={true} component={projects}/>
-                        <Route path="/my-projects" exact={true} component={MyProjects}/>
+                        <Route path="/leader/my-projects" exact={true} component={MyProjectsRoute}/>
                         <Route path="/logout" exact={true} component={logout}/>
                         <Route path="/dashboard" exact={true} component={dashboard}/>
                         <Route path="/createproject" exact={true} component={createProject}/>
@@ -42,6 +42,7 @@ function App() {
                         <Route path="/l/users" exact={true} component={users}/>
                         <Route path="/l/projects" exact={true} component={ProjectL}/>
                         <Route path="/project/:id" component={viewProject}/>
+                        
                         <Redirect to="/login"/>
                     </Switch>
                 </div>

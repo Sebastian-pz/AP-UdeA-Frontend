@@ -1,5 +1,8 @@
 import { gql, useMutation } from "@apollo/client";
 import React from "react";
+import decodeToken from "../../controller/token/decodeToken";
+
+let token = decodeToken()
 
 const MUTATION_PROJECT = gql`
     mutation newProject($projectTitle:String,$go:String,$so:String,$budget:Int,$leader:String){
@@ -33,7 +36,7 @@ const CreateProject = () => {
                     go: project.general_objective.value,
                     so: project.specific_objectives.value,
                     budget: parseInt(project.budget.value),
-                    leader: project.leader.value
+                    leader: token.id
                 }})
                     .then(e => {
                         alert("Proyecto creado")
@@ -59,10 +62,6 @@ const CreateProject = () => {
                 <div>
                     <label id="label">¿Cuánto es el presupuesto para el proyecto?</label><br/>
                     <input autoComplete="off" id="input1"  ref={budget => project.budget = budget} placeholder="Presupuesto" required/>
-                </div>
-                <div>
-                    <label id="label">Confirme su Identificación (#)</label><br/>
-                    <input autoComplete="off" id="input1" ref={leader => project.leader = leader} placeholder="Líder" required/>
                 </div>
                 <br/>
                 <p><b>Nota:</b> Asegúrese de diligenciar correctamente todos los datos<br/> en caso de dudas consulte a la administración</p>

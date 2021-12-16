@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
 import './navbar.css'
+import decodeToken from "../../controller/token/decodeToken"
 
 const logout = () => {
     localStorage.removeItem('auth_token')
@@ -7,22 +8,68 @@ const logout = () => {
     window.location.replace('/login')
 }
 
+let token = decodeToken()
+
 const Navbar = () => {
-    return (
-        <div className="navbar-all">
-            <header id="header-navbar">
-                <img className="logo" src="https://cdn-icons.flaticon.com/png/512/4401/premium/4401470.png?token=exp=1639507305~hmac=81be90ce06a287c97ab0852249999f10" alt="logo"/>
-                <nav>
-                    <ul className="nav_links">
-                        <li id="li-navbar"><Link to="/home" id="link-navbar">Inicio</Link></li>
-                        <li id="li-navbar"><Link to="/projects" id="link-navbar">Proyectos</Link></li>
-                        <li id="li-navbar"><Link to="/my-projects" id="link-navbar">Mis proyectos</Link></li>
-                        <li id="li-navbar"><Link to="/dashboard" id="link-navbar">Ajustes</Link></li>
-                        <li id="li-navbar" onClick={logout}>Logout</li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
-    )
+
+    if(token.role==='Leader'){
+        return (
+            <div className="navbar-all">
+                <header id="header-navbar">
+                    <p id="text">Líder</p>
+                    <nav>
+                        <ul className="nav_links">
+                            <li id="li-navbar"><Link to="/home" id="link-navbar">Inicio</Link></li>
+                            <li id="li-navbar"><Link to="/projects" id="link-navbar">Proyectos</Link></li>
+                            <li id="li-navbar"><Link to="/leader/my-projects" id="link-navbar">Mis proyectos</Link></li>
+                            <li id="li-navbar"><Link to="/dashboard" id="link-navbar">Ajustes</Link></li>
+                            <li id="li-navbar"><Link to="/l/users" id="link-navbar">[A] Usuarios</Link></li>
+                            <li id="li-navbar"><Link to="/admin/activate" id="link-navbar">Activar</Link></li>
+                            <li id="li-navbar"><Link to="/createproject" id="link-navbar">Crear proyecto</Link></li>
+                            <li id="li-navbar" onClick={logout}>Logout</li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        )
+    } else if (token.role === 'Admin') {
+        return (
+            <div className="navbar-all">
+                <header id="header-navbar">
+                <p id="text">Admin</p>
+                    <nav>
+                        <ul className="nav_links">
+                            <li id="li-navbar"><Link to="/home" id="link-navbar">Inicio</Link></li>
+                            <li id="li-navbar"><Link to="/projects" id="link-navbar">Proyectos</Link></li>
+                            <li id="li-navbar"><Link to="/leader/my-projects" id="link-navbar">Mis proyectos</Link></li>
+                            <li id="li-navbar"><Link to="/dashboard" id="link-navbar">Ajustes</Link></li>
+                            <li id="li-navbar"><Link to="/l/users" id="link-navbar">[A] Usuarios</Link></li>
+                            <li id="li-navbar"><Link to="/l/projects" id="link-navbar">[A] Proyectos</Link></li>
+                            <li id="li-navbar"><Link to="/admin/activate" id="link-navbar">Activar</Link></li>
+                            <li id="li-navbar"><Link to="/admin/projects" id="link-navbar">Estados</Link></li>
+                            <li id="li-navbar" onClick={logout}>Logout</li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        )
+    } else if (token.role==='Student'){
+        return (
+            <div className="navbar-all">
+                <header id="header-navbar">
+                <p id="text">Estudiante</p>
+                    <nav>
+                        <ul className="nav_links">
+                            <li id="li-navbar"><Link to="/home" id="link-navbar">Inicio</Link></li>
+                            <li id="li-navbar"><Link to="/projects" id="link-navbar">Proyectos</Link></li>
+                            <li id="li-navbar"><Link to="/dashboard" id="link-navbar">Ajustes de la cuenta</Link></li>
+                            <li id="li-navbar" onClick={logout}>Logout</li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        )
+    }
+    
 }
 export default Navbar;

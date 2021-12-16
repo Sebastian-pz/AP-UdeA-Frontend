@@ -36,7 +36,7 @@ const ChangeProjectStatus = () => {
     const table = data.projects.map(({id, title, general_objective, leader, budget}) => (
         (<div id="userbody" >
             <div id="user">
-                <table className="table" id="table">
+                <table className="table" id="tablita">
                     <tr id="row">
                         <td id="col1">{title}</td>
                         <td id="col2">{general_objective}</td>

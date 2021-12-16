@@ -13,6 +13,8 @@ const DashboardProjects = () => {
                 <ChangeProjectStatus/>
             </div>
         )
+    } else {
+        window.location.replace('/home')
     }
 }
 

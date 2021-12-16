@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     background-color: #24252A;
+    text-align: center;
 }
 
 #li-navbar, #link-navbar {
@@ -47,3 +48,6 @@
 
 
 
+#text {
+    color:white
+}

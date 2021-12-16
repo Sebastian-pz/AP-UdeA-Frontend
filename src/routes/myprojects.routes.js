@@ -1,13 +1,14 @@
 import React from "react";
 import Navbar from '../components/nav/navbar';
+import MyProjects from "../components/projects/myprojects.component";
 
-const MyProjects = () => {
+const MyProjectsRoute = () => {
     return(
         <div>
             <Navbar/>
-            <h1>Esta es la página de mis proyectos</h1>
+            <MyProjects/>
         </div>
     )
 }
 
-export default MyProjects;
+export default MyProjectsRoute;

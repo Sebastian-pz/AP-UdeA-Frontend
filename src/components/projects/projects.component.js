@@ -23,7 +23,7 @@ const Projects = () => {
     const table = data.getActiveProjects.map(({title,general_objective,leader,id}) => (
 
         <div id="project" key={id}>
-            <div id="table">
+            <div id="tablita">
                 <Link to={`/project/${id}`}><h4>{title}</h4></Link>
                 <p><b>Objetivo general del proyecto:</b> {general_objective}</p>
                 <p><b>Persona responsable del proyecto:</b> {leader}</p>

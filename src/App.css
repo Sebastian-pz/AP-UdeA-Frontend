@@ -102,18 +102,18 @@
 
 }
 
-#table {
-    align-items: center;
-    text-align: justify;
+#tablita {
+    width: 150ch;
+    margin-left: auto;
+    margin-right: auto;
+    
     padding: 12px;
-    margin: 10px;
+    margin: 15px;
     background: #EAEAEA;
     border: solid lightgray 1px;
     border-radius: 3px;
 }
-#table {
-    text-align: center;
-}
+
 
 #col {
     border: lightgray solid 1px;
@@ -179,7 +179,12 @@
     box-shadow: 10px 5px 10px 10px rgba(0, 0, 0, 0.445);
     padding: 15px;
     padding-top: 40px;
-
+    margin-left: auto;
+    margin-right: auto;
+}
+#project{
+    margin-left: auto;
+    margin-right: auto;
 }
 #table-progress {
     background: #EAEAEA;
