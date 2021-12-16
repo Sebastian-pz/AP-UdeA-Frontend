@@ -1,71 +1,36 @@
-import { useQuery, gql, useMutation } from "@apollo/client";
+import { useQuery, gql } from '@apollo/client'
+import User from './user.component'
+import './users.css'
 
-
-
-const InactiveUsers = () => {
-
-    const MUTATION_ACTIVATE_USER = gql `
-        mutation user($id:String){
-            activateUser(id:$id)
-        }
-    `
-
-    const MUTATION_DELETEUSER = gql `
-        mutation user($id:String){
-            deleteUser(id:$id)
-        }
-    `
-    const [deleteUser] = useMutation(MUTATION_DELETEUSER)
-    const [activateUser] = useMutation(MUTATION_ACTIVATE_USER)
-    const INACTIVEUSERS = gql `
-    query{
-        getInactiveUser{
+const UserList = () => {
+    const USERS = gql`
+    query {
+        users{
             id
             name
+            email
             role
             accountStatus
         }
     }
-`;
+    `;
 
-    const {loading, error, data} = useQuery(INACTIVEUSERS)
-    if(loading) return "Loading..."
-    if(error) return "Error al cargar"
-    const table = data.getInactiveUser.map(({id,name,role,accountStatus}) => (
-        (<div id="userbody" >
-            <div id="user">
-                <table className="table" id="table">
-                    <tr id="row">
-                        <td id="col1">{id}</td>
-                        <td id="col2">{name}</td>
-                        <td id="col3">{role}</td>
-                        <td id="col4">{accountStatus}</td>
-                        <button id="buttonActivate" className="btn btn-success" onClick={ e => {
-                            e.preventDefault();
-                            activateUser({variables:{id}})
-                                .then(response => {
-                                    alert(response.data.activateUser)
-                                    if(response.data.activateUser === "Usuario activado"){
-                                        window.location.reload()
-                                    }
-                                })
-                        }}>Activar</button>
-                        <button id="buttonActivate" className="btn btn-danger" onClick={ e => {
-                            e.preventDefault();
-                            deleteUser({variables:{id}})
-                                .then(response => {
-                                    alert(response.data.deleteUser)
-                                    if(response.data.deleteUser === "Usuario eliminado"){
-                                        window.location.reload()
-                                    }
-                                })
-                        }}>Eliminar</button>
+    const {loading, error, data} = useQuery(USERS);
+    if(loading){return "Cargando, por favor espere"}
+    if(error){return "Ha ocurrido un error durante la carga"}
+
+    return (
+        <div id="body" >
+            <table id="users-table">
+                <thead>
+                    <tr>
+                        <th id="col-user6">Lista de todos los usuarios registrados</th>
                     </tr>
-                </table>
-            </div>
-        </div>)
-    ));
-        return <table>{table}</table>
+                    {data.users.map((user)=> <User user={user}/>)}
+                </thead>
+            </table>
+        </div>
+    )
 }
 
-export default InactiveUsers;
+export default UserList;

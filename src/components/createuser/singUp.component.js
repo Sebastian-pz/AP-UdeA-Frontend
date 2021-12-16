@@ -1,5 +1,6 @@
 import React from 'react';
 import { gql, useMutation } from "@apollo/client";
+import './singup.css'
 
 const MUTATION_CREATE_USER = gql `
     mutation newAccount($name:String,$id:String, $email:String, $password:String, $role: String){
@@ -19,6 +20,7 @@ const SingUp = () => {
     }
 
     return (<div id="body">
+        <div id="singupb">
         <h1 id="title">Crear usuario</h1>
         <div>
             <form onSubmit = {e => {
@@ -34,7 +36,7 @@ const SingUp = () => {
                 }})
                 .then(u => {
                     alert("Usuario creado")
-                    window.location.replace('/')
+                    window.location.replace('/login')
                 })
                 .catch(err => alert(err))
 
@@ -42,31 +44,32 @@ const SingUp = () => {
 
                 <div>
                     <label id="label">Ingrese su nombre completo</label><br/>
-                    <input id="input" autoComplete="off" ref={name => user.name = name} placeholder="Nombre y apellidos" required/>
+                    <input id="input1" autoComplete="off" ref={name => user.name = name} placeholder="Nombre y apellidos" required/>
                 </div>
                 <div>
                     <label id="label">Ingrese su documento de identidad</label><br/>
-                    <input  id="input" autoComplete="off" ref={id => user.id = id} placeholder="0001" required/>
+                    <input  id="input1" autoComplete="off" ref={id => user.id = id} placeholder="0001" required/>
                 </div>
                 <div>
                     <label id="label">Ingrese su correo electrónico</label><br/>
-                    <input id="input" autoComplete="off" type="email" ref={email => user.email = email} placeholder="Correo" required/>
+                    <input id="input1" autoComplete="off" type="email" ref={email => user.email = email} placeholder="Correo" required/>
                 </div>
                 <div>
                     <label id="label">Ingrese su contraseña</label><br/>
-                    <input id="input" autoComplete="off" ref={password => user.password = password} type="password" placeholder="Contraseña" required/>
+                    <input id="input1" autoComplete="off" ref={password => user.password = password} type="password" placeholder="Contraseña" required/>
                 </div>
                 <div>
                     <label id="label">A qué rol aspira</label><br/>
-                    <input id="input" autoComplete="off" list="roles" ref={role => user.role = role} placeholder="Student" required/>
+                    <input id="input1" autoComplete="off" list="roles" ref={role => user.role = role} placeholder="Student" required/>
                     <datalist id="roles">
                         <option value="Student"/>
                         <option value="Leader"/>
                     </datalist>
                 </div>
-                <div><button type="submit" className="btn btn-primary">Crear usuario</button></div>
+                <div><button type="submit" id="btnm" className="btn btn-primary">Crear usuario</button></div>
 
             </form>
+        </div>
         </div>
     </div>)
 }

@@ -1,29 +1,15 @@
-import { useQuery, gql } from "@apollo/client";
-
-const User = () => {
-    const USERS = gql `
-    query{
-        users{
-            id
-            name
-            role
-            accountStatus
-        }
-    }
-`;
-    const {loading, error, data} = useQuery(USERS)
-    if(loading) return "Loading..."
-    if(error) return "Error al cargar"
-
-    const user = data.users;
-    console.log(user[0].name)
-
-    return(
+const User = ({user}) => {
+    return (
         <div>
-            {JSON.stringify(user)}
+            <tr>
+                <td id="col-user">{user.id}</td>
+                <td id="col-user2">{user.name}</td>
+                <td id="col-user3">{user.accountStatus}</td>
+                <td id="col-user4">{user.role}</td>
+                <td id="col-user5">{user.email}</td>
+            </tr>
         </div>
     )
-
 }
 
 export default User;

@@ -1,20 +1,21 @@
-import AdminActivateUser from '../components/activateUser/admin_activateuser.component';
+import UserList from '../components/users/users.component';
 import Navbar from '../components/nav/navbar';
 import decodeToken from '../controller/token/decodeToken';
 
-const DashboarUsers = () => {
+const Users = () => {
     let token = decodeToken()
-    if(token.role === 'Admin'){
+    if(token.role === "Admin" || token.role === "Leader" ){
         return (
             <div>
                 <Navbar/>
-                <AdminActivateUser/>
+                <UserList/>
             </div>
-    )
+        )
     } else {
         window.location.replace('/login')
     }
+    
 
 }
 
-export default DashboarUsers;
+export default Users;

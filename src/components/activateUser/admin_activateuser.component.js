@@ -1,6 +1,6 @@
 import React from "react";
 import {gql, useMutation} from '@apollo/client';
-import Users from "../users/users.component";
+import InactiveUsers from "../users/inactiveusers.component";
 
 
 
@@ -12,12 +12,12 @@ const MUTATION_ACTIVATE_USER = gql `
 
 
 
-const Dashboard_activateUser = () => {
+const AdminActivateUser = () => {
     const [activateUser] = useMutation(MUTATION_ACTIVATE_USER)
 
     let user = {
         id:0
-    } 
+    }
 
     return (
         <div id="body">
@@ -43,17 +43,17 @@ const Dashboard_activateUser = () => {
                         <input id="input" maxLength="10" autoComplete="off" type="text" ref={id => user.id = id} placeholder="Identificación" required />
                     </div>
 
-                    <button type="submit" className="btn btn-primary">Activar</button>
+                    <button type="submit" className="btn btn-success">Activar</button>
                 </form>
             </div>
 
             <h2 id="title">Lista de usuarios inactivos:</h2>
 
             <div>
-                <Users/>
+                <InactiveUsers/>
             </div>
         </div>
     )
 }
 
-export default Dashboard_activateUser;
+export default AdminActivateUser;

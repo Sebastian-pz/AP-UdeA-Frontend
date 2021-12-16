@@ -159,19 +159,61 @@
     width: 100%;
 }
 
+#progress {
+    padding: 30px;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 20px;
+    background-color: rgba(247, 191, 139, 0.479);
+    border: #000000 solid 1px;
+    border-radius: 10px;
+    box-shadow: -1px -1px 6px 1px rgba(105, 105, 105, 0.685);
+}
+
+#projectV {
+    background: #EAEAEA;
+    border-radius: 30px;
+    margin: 30px;
+    margin-bottom: 90px;
+    box-shadow: 10px 5px 10px 10px rgba(0, 0, 0, 0.445);
+    padding: 15px;
+    padding-top: 40px;
+
+}
+#table-progress {
+    background: #EAEAEA;
+    border-radius: 30px;
+    margin: 30px;
+    margin-bottom: 90px;
+    box-shadow: 10px 5px 10px 10px rgba(0, 0, 0, 0.445);
+    padding: 15px;
+    padding-top: 40px;
+
+}
+
+#input-progress {
+    width: 800px;
+    height: 200px;
+    padding: 25px;
+    background-color: rgba(105, 79, 49, 0.15);
+    border-radius: 30px;
+}
+
 #buttonActivate {
     width: 120px;
+    height: 35px;
     margin: 5px;
 }
 
 
 #body {
-    background: rgba(126, 126, 126, 0.275);
+    
     margin: 0;
     padding: 0;
     padding-top: 30px;
     text-align: center;
-    height: 100vh;
+    height: auto;
     width: auto;
     overflow: hidden;
 }

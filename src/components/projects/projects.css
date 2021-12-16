@@ -1,0 +1,36 @@
+#col-project{
+    border: lightgray solid 1px;
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+}
+#col-project2{
+    border: lightgray solid 1px;
+    width: 300px;
+}
+#col-project3{
+    border: lightgray solid 1px;
+    width: 400px;
+}
+#col-project4{
+    border: lightgray solid 1px;
+    color: green;
+    font-weight: bold;
+    width: 100px;
+}
+#col-project5{
+    border: lightgray solid 1px;
+    width: 300px;
+}
+
+#col-project6{
+    border: gray solid 1px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+#projects-table{
+    position: inherit;
+    margin: 50px;
+    margin-left: 200px;
+}
