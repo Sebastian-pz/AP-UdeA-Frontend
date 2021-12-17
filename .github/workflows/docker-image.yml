@@ -1,7 +1,9 @@
 name: Docker Image CI
+
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
+
 
 jobs:
   build:
@@ -14,7 +16,6 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USERNAME}}/back-c4
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USERNAME}}/front-c4
     - name: Push to hub
-      run: docker push ${{secrets.DOCKER_USERNAME}}/back-c4
-
+      run: docker push ${{secrets.DOCKER_USERNAME}}/front-c4
