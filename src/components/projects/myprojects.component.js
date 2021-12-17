@@ -23,7 +23,7 @@ const MyProjects = () => {
     const {loading, error, data} = useQuery(PROJECTS, {variables:{leader:token.id}})
     if(loading) return "Cargando..."
     if(error) return "Error al cargar"
-    
+
     const ProjectIsActive = (isA) => {
         if(isA === true){
             return (

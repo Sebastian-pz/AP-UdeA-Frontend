@@ -29,7 +29,7 @@ const PendingUsers = (id) => {
     console.log(data.getProject.pending_approval)
 
     const table = data.getProject.pending_approval.map((u) => (
-        <div id="aceptar">
+        <div id="projectV">
             <div id="ysw">
                 <div id="profile-img"></div>
                     <p id="col1a">{u}</p>

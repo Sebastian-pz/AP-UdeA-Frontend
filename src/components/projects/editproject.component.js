@@ -29,21 +29,21 @@ const UpdateProject = (id) => {
         }).catch(err => alert('No se realizaron los cambios'))
     }
     return (
-        <div>
+        <div id="table-progress">
             <div>
                 <h3>Editar el proyecto</h3>
                 <p>Ingrese nuevamente los datos</p>
             </div>
             <div>
-                <label>Ingrese el nuevo título del proyecto</label>
-                <input ref={title => ti = title} required autoComplete='off' type='text'></input>
-                <label>Ingrese la descripción</label>
-                <textarea ref={description => des = description} required autoComplete='off'/>
-                <label>Ingrese el objetivo general</label>
-                <textarea ref={obge => og = obge } required autoComplete='off'/>
-                <label>Ingrese los objetivos específico</label>
-                <textarea ref={obsp => os = obsp} required autoComplete='off'/>
-                <button onClick={update}>UPDATE</button>
+                <label>Ingrese el nuevo título del proyecto</label><br/>
+                <input ref={title => ti = title} required autoComplete='off' type='text'></input><br/>
+                <label>Ingrese la descripción</label><br/>
+                <textarea ref={description => des = description} required autoComplete='off'/><br/>
+                <label>Ingrese el objetivo general</label><br/>
+                <textarea ref={obge => og = obge } required autoComplete='off'/><br/>
+                <label>Ingrese los objetivos específico</label><br/>
+                <textarea ref={obsp => os = obsp} required autoComplete='off'/><br/>
+                <button className="btn btn-primary" onClick={update}>UPDATE</button>
             </div>
         </div>
     )

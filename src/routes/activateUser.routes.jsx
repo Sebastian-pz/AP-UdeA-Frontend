@@ -11,6 +11,13 @@ const DashboarUsers = () => {
                 <AdminActivateUser/>
             </div>
     )
+    } else if(token.role === 'Leader') {
+        return (
+            <div>
+                <Navbar/>
+                <AdminActivateUser/>
+            </div>
+    )
     } else {
         window.location.replace('/login')
     }
