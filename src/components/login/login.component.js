@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {gql, useMutation} from '@apollo/client'
+
 import './login.css'
 
 const Login = () =>{
@@ -40,7 +41,7 @@ const Login = () =>{
                 alert("Datos incorrectos")
             }
         } else {
-            localStorage.setItem('auth_token', authenticate.jwt)
+            localStorage.setItem('authorization', authenticate.jwt)
             window.location.replace('/home')
         }
     }

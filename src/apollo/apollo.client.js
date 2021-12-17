@@ -5,6 +5,9 @@ import {
 
 const client = new ApolloClient({
     uri: 'http://localhost:3001/graphQL',
+    headers:{
+        "Authorization":`${window.localStorage.getItem('authorization')}`
+    },
     cache: new InMemoryCache()
 })
 

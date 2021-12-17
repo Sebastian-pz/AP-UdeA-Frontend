@@ -30,7 +30,7 @@ const AdminActivateUser = () => {
                         id:user.id.value
                     }})
                         .then(response => {
-                            alert(response.data.activateUser)
+                            console.log(response.data.activateUser)
                             if(response.data.activateUser === "Usuario activado"){
                                 window.location.reload()
                             }
