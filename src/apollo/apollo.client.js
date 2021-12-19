@@ -4,7 +4,7 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-    uri: 'http://localhost:3001/graphQL',
+    uri: 'https://back-c4.herokuapp.com/graphQL',
     headers:{
         "Authorization":`${window.localStorage.getItem('authorization')}`
     },
