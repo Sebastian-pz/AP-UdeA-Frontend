@@ -51,12 +51,12 @@ const ChangeProjectStatus = () => {
                             e.preventDefault();
                             activateProject({variables:{id}})
                             window.location.reload()
-                        }}>Habilitar</button>
+                        }}>✔</button>
                         <button id="buttonActivate" className="btn btn-danger" onClick={ e => {
                             e.preventDefault();
                             stopProject({variables:{id}})
                             window.location.reload()
-                        }}>Deshabilitar</button>
+                        }}>❌</button>
                     </tr>
                 </table>
             </div>

@@ -1,24 +1,24 @@
 #col-user{
     border: lightgray solid 1px;
-    width: 150px;
+    width: 15%;
     font-weight: bold;
     text-align: center;
 }
 #col-user2{
     border: lightgray solid 1px;
-    width: 300px;
+    width: 35%;
 }
 #col-user3{
     border: lightgray solid 1px;
-    width: 100px;
+    width: 10%;
 }
 #col-user4{
     border: lightgray solid 1px;
-    width: 100px;
+    width: 10%;
 }
 #col-user5{
     border: lightgray solid 1px;
-    width: 300px;
+    width: 500px;
 }
 
 #col-user6{
@@ -27,8 +27,17 @@
     text-align: center;
 }
 
+#users-table3{
+    width: 100%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 #users-table{
     position: inherit;
     margin: 50px;
-    margin-left: 200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }

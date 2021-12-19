@@ -22,11 +22,11 @@ const UserList = () => {
     return (
         <div id="body" >
             <table id="users-table">
-                <thead>
+                <thead id="users-table3">
                     <tr>
                         <th id="col-user6">Lista de todos los usuarios registrados</th>
                     </tr>
-                    {data.users.map((user)=> <User user={user}/>)}
+                    {data.users.map((user)=> <User  user={user}/>)}
                 </thead>
             </table>
         </div>
