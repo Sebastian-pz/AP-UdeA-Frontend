@@ -1,0 +1,257 @@
+
+
+#body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#label {
+    margin: 10px;
+}
+
+#input {
+    margin: 10px;
+    text-align: center;
+    border-color: #00ADB5;
+    border: solid black 1px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 13px;
+    width: 200px;
+    height: 35px;
+    
+}
+
+#input:hover {
+    border: solid #0d6efd 2px;
+    width: 400px;
+    transition: 0.3s;
+}
+
+#input:focus {
+    border: solid #0d6efd 2px;
+    width: 600px;
+    transition: 0.3s;
+}
+
+#title {
+    margin-top: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#bodylogin {
+    background: #393E46;
+    background-size: cover;
+}
+#logback {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formlogin {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 80px 40px 40px;
+    background: #a6a5a7c9;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+#formlogin::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px ;
+    pointer-events: none;
+}
+
+#logintitle {
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color: #ff0195;
+}
+
+#inputlogin {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #ff0195;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+
+}
+
+#tablita {
+    width: 150ch;
+    margin-left: auto;
+    margin-right: auto;
+    
+    padding: 12px;
+    margin: 15px;
+    background: #EAEAEA;
+    border: solid lightgray 1px;
+    border-radius: 3px;
+}
+
+
+#col {
+    border: lightgray solid 1px;
+    margin: 0px;
+}
+
+#col1 {
+    border: lightgray solid 1px;
+    width: 150px;
+    font-weight: bold;
+}
+#col2 {
+    border: lightgray solid 1px;
+    width: 500px;
+}
+
+#col3 {
+    border: lightgray solid 1px;
+    width: 300px;
+}
+#col4 {
+    border: lightgray solid 1px;
+    width: 100px;
+}
+
+#activate_body {
+    position: inherit;
+    text-align: center;
+}
+
+#userbody {
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+}
+#row {
+    position: relative;
+    width: 100%;
+}
+
+#progress {
+    padding: 30px;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 20px;
+    background-color: rgba(247, 191, 139, 0.479);
+    border: #000000 solid 1px;
+    border-radius: 10px;
+    box-shadow: -1px -1px 6px 1px rgba(105, 105, 105, 0.685);
+}
+
+#projectV {
+    background: #EAEAEA;
+    border-radius: 30px;
+    margin: 30px;
+    margin-bottom: 90px;
+    box-shadow: 10px 5px 10px 10px rgba(0, 0, 0, 0.445);
+    padding: 15px;
+    padding-top: 40px;
+    
+}
+#project{
+    margin-left: auto;
+    margin-right: auto;
+}
+#table-progress {
+    background: #EAEAEA;
+    border-radius: 30px;
+    margin: 30px;
+    margin-bottom: 90px;
+    box-shadow: 10px 5px 10px 10px rgba(0, 0, 0, 0.445);
+    padding: 15px;
+    padding-top: 40px;
+
+}
+
+#input-progress {
+    width: 800px;
+    height: 200px;
+    padding: 25px;
+    background-color: rgba(105, 79, 49, 0.15);
+    border-radius: 30px;
+}
+
+#buttonActivate {
+    width: 120px;
+    height: 35px;
+    margin: 5px;
+}
+
+
+#body {
+    
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    text-align: center;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+}
+#form {
+    position: relative;
+}
+#label {
+    margin-top: 3px;
+}
+
+#input {
+    text-align: center;
+    border-color: #00ADB5;
+    border: solid black 1px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 13px;
+    width: 200px;
+    height: 35px;
+}
+
+#input:hover {
+    border: solid #0d6efd 2px;
+    width: 400px;
+    transition: 0.3s;
+}
+
+#input:focus {
+    border: solid #0d6efd 2px;
+    width: 600px;
+    transition: 0.3s;
+}
+
+#submitbutton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

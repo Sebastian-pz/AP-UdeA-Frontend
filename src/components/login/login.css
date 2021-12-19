@@ -1,0 +1,66 @@
+
+#loginb {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.582);
+    margin-left: 450px;
+    margin-right: 450px;
+    padding-bottom: 30px;
+    border-radius: 30px;
+}
+
+#input1{
+    outline: none;
+    text-align: center;
+    padding: 3px;
+    height: 35px;
+    margin: 5px;
+    font-size: 18px;
+    border-color: #0d6efd;
+    border: solid 1px black;
+    border-radius: 16px;
+}
+#input2{
+    cursor: pointer;
+    outline: none;
+    color: gray;
+    text-align: center;
+    padding: 3px;
+    height: 35px;
+    margin: 5px;
+    font-size: 18px;
+    border-color: gray;
+    border: solid 1px gray;
+    border-radius: 16px;
+}
+
+#input1:hover {
+    border: solid #0d6efd 2px;
+    width: 250px;
+    height: 35px;
+    transition: 0.3s;
+}
+#input1:focus {
+    border: solid #0d6efd 2px;
+    width: 250px;
+    height: 35px;
+    transition: 0.3s;
+}
+#tt{
+    padding: 5px;
+}
+
+#link_a {
+    color: white;
+    text-decoration: none;
+    border: none;
+    margin-top: 10px;
+}
+
+#link_a:hover {
+    font-weight: 600;
+    color: #01ccff;
+    transition:0.3s;
+}
+
