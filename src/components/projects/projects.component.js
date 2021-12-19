@@ -3,6 +3,7 @@ import {
     gql
 } from "@apollo/client"
 import { Link } from "react-router-dom";
+import UserName from './getName.component'
 
 const Projects = () => {
     const PROJECTS = gql`
@@ -26,7 +27,7 @@ const Projects = () => {
             <div id="tablita">
                 <Link to={`/project/${id}`}><h4>{title}</h4></Link>
                 <p><b>Objetivo general del proyecto:</b> {general_objective}</p>
-                <p><b>Persona responsable del proyecto:</b> {leader}</p>
+                <p><b>Persona responsable del proyecto:</b><UserName id={leader}/></p>
             </div>
         </div>
     ));

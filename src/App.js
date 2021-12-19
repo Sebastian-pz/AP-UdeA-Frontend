@@ -20,7 +20,6 @@ import viewProject from "./routes/viewProject.routes";
 import MyProjectsRoute from "./routes/myprojects.routes";
 import ProjectL from "./routes/allProjects.routes";
 import DashboardProjects from "./routes/changeProjectStatus.routes";
-import PendingUsersLeader from "./routes/ActivateUserProject.routes";
 
 
 function App() {

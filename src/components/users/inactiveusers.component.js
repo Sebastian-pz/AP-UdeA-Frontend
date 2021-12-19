@@ -43,22 +43,12 @@ const InactiveUsers = () => {
                         <button id="buttonActivate" className="btn btn-success" onClick={ e => {
                             e.preventDefault();
                             activateUser({variables:{id}})
-                                .then(response => {
-                                    alert(response.data.activateUser)
-                                    if(response.data.activateUser === "Usuario activado"){
-                                        window.location.reload()
-                                    }
-                                })
+                            window.location.reload()
                         }}>Activar</button>
                         <button id="buttonActivate" className="btn btn-danger" onClick={ e => {
                             e.preventDefault();
                             deleteUser({variables:{id}})
-                                .then(response => {
-                                    alert(response.data.deleteUser)
-                                    if(response.data.deleteUser === "Usuario eliminado"){
-                                        window.location.reload()
-                                    }
-                                })
+                            window.location.reload()
                         }}>Eliminar</button>
                     </tr>
                 </table>
