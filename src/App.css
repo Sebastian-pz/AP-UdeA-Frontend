@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -22,7 +22,6 @@
     border-radius: 13px;
     width: 200px;
     height: 35px;
-    
 }
 
 #input:hover {
@@ -103,15 +102,13 @@
 }
 
 #tablita {
-    width: 150ch;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    
     padding: 12px;
-    margin: 15px;
     background: #EAEAEA;
     border: solid lightgray 1px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 
@@ -148,7 +145,8 @@
     align-content: center;
     align-self: center;
     align-items: center;
-    
+    width: 100%;
+    height: auto;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -160,12 +158,9 @@
 }
 
 #progress {
-    padding: 30px;
-    margin-top: 20px;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-bottom: 20px;
-    background-color: rgba(247, 191, 139, 0.479);
+    padding: 15px;
+    margin: 30px;
+    background-color: rgba(199, 199, 199, 0.479);
     border: #000000 solid 1px;
     border-radius: 10px;
     box-shadow: -1px -1px 6px 1px rgba(105, 105, 105, 0.685);
@@ -179,7 +174,6 @@
     box-shadow: 10px 5px 10px 10px rgba(0, 0, 0, 0.445);
     padding: 15px;
     padding-top: 40px;
-    
 }
 #project{
     margin-left: auto;
@@ -189,15 +183,13 @@
     background: #EAEAEA;
     border-radius: 30px;
     margin: 30px;
-    margin-bottom: 90px;
     box-shadow: 10px 5px 10px 10px rgba(0, 0, 0, 0.445);
     padding: 15px;
-    padding-top: 40px;
 
 }
 
 #input-progress {
-    width: 800px;
+    width: 70%;
     height: 200px;
     padding: 25px;
     background-color: rgba(105, 79, 49, 0.15);
@@ -205,9 +197,12 @@
 }
 
 #buttonActivate {
-    width: 120px;
+    width: 6%px;
     height: 35px;
     margin: 5px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 

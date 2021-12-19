@@ -1,6 +1,6 @@
 const Project = ({project}) => {
     return (
-        <div>
+        <div id="users-table3">
             <tr>
                 <td id="col-project">{project.leader}</td>
                 <td id="col-project2">{project.title}</td>

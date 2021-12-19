@@ -10,10 +10,10 @@ const NAME = gql`
 const UserName =  (id) => {
     const {loading, error, data} = useQuery(NAME, {variables:{id:id.id}})
     if(loading) return"Cargando..."
-    if(error) console.log(error)
-    let leader = data.getName
+    if(error) return " Error al cargar"
+    let user = data.getName
     return (
-        <p>{leader}</p>
+        <p>{user}</p>
     )
 }
 

@@ -1,6 +1,6 @@
 #col-project{
     border: lightgray solid 1px;
-    width: 150px;
+    width: 10%;
     font-weight: bold;
     text-align: center;
 }
@@ -27,13 +27,13 @@
     border: gray solid 1px;
     background-color: lightgray;
     text-align: center;
+    width: 100%;
+    max-width: 890px;
+
 }
 
 #projects-table{
     position: inherit;
-    margin: 50px;
-    margin-left: 200px;
-}
-
-#members {
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -20,7 +20,7 @@ const ProjectList = () => {
 
     return (
         <div id="body" >
-            <table id="users-table">
+            <table id="projects-table">
                 <thead>
                     <tr>
                         <th id="col-user6">Lista de todos los proyectos registrados</th>

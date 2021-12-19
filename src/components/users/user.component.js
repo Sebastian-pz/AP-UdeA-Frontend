@@ -1,7 +1,7 @@
 const User = ({user}) => {
     return (
-        <div>
-            <tr>
+        <div id="users-table3">
+            <tr >
                 <td id="col-user">{user.id}</td>
                 <td id="col-user2">{user.name}</td>
                 <td id="col-user3">{user.accountStatus}</td>
