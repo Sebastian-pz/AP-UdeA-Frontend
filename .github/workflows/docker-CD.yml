@@ -1,21 +1,21 @@
-name: Docker Image CI 2
+name: Docker Image CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Login in Docker hub
+    - name: Login Docker
       env:
-        DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: $ {{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USER:  ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - name: Build the docker image
+    - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USERNAME}}/front-c4
-    - name: Docker push to hub
-      run: docker push ${{secrets.DOCKER.USERNAME}}/front-c4
+    - name: Push to hub
+      run: docker push ${{secrets.DOCKER_USERNAME}}/front-c4
