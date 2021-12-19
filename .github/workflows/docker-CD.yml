@@ -19,5 +19,3 @@ jobs:
       run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USERNAME}}/front-c4
     - name: Docker push to hub
       run: docker push ${{secrets.DOCKER.USERNAME}}/front-c4
-    
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
