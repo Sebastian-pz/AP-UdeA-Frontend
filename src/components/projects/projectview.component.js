@@ -5,8 +5,6 @@ import decodeToken from '../../controller/token/decodeToken';
 import PendingUsers from './pendingUsers.component';
 import UserName from './getName.component';
 
-
-
 const ProjectView = ({props: {match:{params:{id}}}}) => {
     let token = decodeToken()
     //console.log(id);
@@ -34,14 +32,6 @@ const ProjectView = ({props: {match:{params:{id}}}}) => {
             registerToProject(id:$id, user:$user)
         }
     `;
-    const DELETEPROGRESS_MUTATION = gql`
-            mutation dpro($id:String, $progress:String){
-                pullProgress(id:$id, progress:$progress)
-            }
-        `;
-
-    const [pullProgress] = useMutation(DELETEPROGRESS_MUTATION)
-
     const [registerToProject] = useMutation(REGISTERTOPROJECT_MUTATION)
 
     const btn = (e) => {
@@ -59,8 +49,6 @@ const ProjectView = ({props: {match:{params:{id}}}}) => {
     if(loading) return "Cargando datos del proyecto."
     if(error) return "Error para cargar los datos del proyecto"
     const {title, general_objective, specific_objectives, progress, leader, members, description} = data.getProject
-
-    console.log(data)
 
     const mapMembers = () => members.map((members) => (
         <UserName id={members}/>
