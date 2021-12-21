@@ -9,14 +9,9 @@ const PendingUsers = (id) => {
     const PROJECT = gql`
     query PROJECT($id:String){
         getProject(id:$id){
-            title
             id
-            general_objective
-            specific_objectives
-            progress
             leader
             members
-            description
             pending_approval
         }
     }
@@ -39,7 +34,7 @@ const PendingUsers = (id) => {
 
     const {loading, error, data} = useQuery(PROJECT, {variables:{id:(id.id)}})
     if(loading) return "Cargando datos del proyecto."
-    if(error) return "Error para cargar los datos del proyecto"
+    if(error) return "Error en la carga de datos:"
     //const {Pending_approval} = data.getProject
     //console.log(data.getProject.pending_approval)
 

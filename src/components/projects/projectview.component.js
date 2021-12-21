@@ -5,10 +5,6 @@ import decodeToken from '../../controller/token/decodeToken';
 import PendingUsers from './pendingUsers.component';
 import UserName from './getName.component';
 
-
-
-
-
 const ProjectView = ({props: {match:{params:{id}}}}) => {
     let token = decodeToken()
     //console.log(id);
@@ -19,10 +15,14 @@ const ProjectView = ({props: {match:{params:{id}}}}) => {
             id
             general_objective
             specific_objectives
-            progress
             leader
             members
             description
+            progress {
+                progress
+                author
+                comment
+            }
         }
     }
     `;
@@ -32,14 +32,6 @@ const ProjectView = ({props: {match:{params:{id}}}}) => {
             registerToProject(id:$id, user:$user)
         }
     `;
-    const DELETEPROGRESS_MUTATION = gql`
-            mutation dpro($id:String, $progress:String){
-                pullProgress(id:$id, progress:$progress)
-            }
-        `;
-
-    const [pullProgress] = useMutation(DELETEPROGRESS_MUTATION)
-
     const [registerToProject] = useMutation(REGISTERTOPROJECT_MUTATION)
 
     const btn = (e) => {
@@ -56,9 +48,7 @@ const ProjectView = ({props: {match:{params:{id}}}}) => {
     const {loading, error, data} = useQuery(PROJECT, {variables:{id:id}})
     if(loading) return "Cargando datos del proyecto."
     if(error) return "Error para cargar los datos del proyecto"
-    const {title, general_objective, specific_objectives, progress, leader, members, description } = data.getProject
-
-    //console.log(progress)
+    const {title, general_objective, specific_objectives, progress, leader, members, description} = data.getProject
 
     const mapMembers = () => members.map((members) => (
         <UserName id={members}/>
@@ -68,23 +58,27 @@ const ProjectView = ({props: {match:{params:{id}}}}) => {
         return (
             <div id="body">
                 <div id="projectV">
-                    <h4>Este es el proyecto {title}</h4>
+                    <h4>{title}</h4>
                     <p>Bienvenido/a a la página principal del proyecto, desde aquí podrás revisar los avances.</p>
                     <p><b>Descripción del proyecto:</b><br/>{description}</p>
                     <p><b>Objetivo general del proyecto:</b><br/>{general_objective}</p>
                     <p><b>Objetivo específico del proyecto:</b><br/>{specific_objectives}</p>
                     <div>
-                    {progress.map(x => {
-                        return (
-                            <div id="progress">
-                                {x}
-                            </div>
-                        )
-                    })}
+                    {progress.map(p => {
+                            return (
+                                <div id="progress" key={p.progress}>
+                                <p><UserName id={p.author}/></p>
+                                <p>{p.progress}</p>
+                                <p id="comment">{p.comment}</p>
+                                </div>
+                            )
+                        })}
                     </div>
                     <div>
                         <p><b>Líder del proyecto:</b></p><UserName id={leader}/>
                     </div>
+                </div>
+                <div>
                 </div>
                 <div>
                     <AddProgress id={id}/>
@@ -95,33 +89,21 @@ const ProjectView = ({props: {match:{params:{id}}}}) => {
         return (
             <div id="body">
                 <div id="projectV">
-                    <h4>Este es el proyecto {title}</h4>
+                    <h4>{title}</h4>
                     <p>Bienvenido/a a la página principal del proyecto, desde aquí podrás revisar los avances.</p>
                     <p><b>Descripción del proyecto:</b><br/>{description}</p>
                     <p><b>Objetivo general del proyecto:</b><br/>{general_objective}</p>
                     <p><b>Objetivo específico del proyecto:</b><br/>{specific_objectives}</p>
                     <div>
-                    {progress.map(x => {
-                        return (
-                            <div>
-                                <div id="progress">
-                                    {x}
+                        {progress.map(p => {
+                            return (
+                                <div id="progress" key={p.progress}>
+                                <p><UserName id={p.author}/></p>
+                                <p>{p.progress}</p>
+                                <p id="comment">{p.comment}</p>
                                 </div>
-                                <button className="btn btn-danger" onClick={e => {
-                                    e.preventDefault();
-                                    console.log(id)
-                                    console.log(x)
-                                    pullProgress({variables:{
-                                        id:id,
-                                        progress:x
-                                    }}).then(
-                                        alert("Progreso eliminado"),
-                                        window.location.reload()
-                                    )
-                                }}>Borrar</button>
-                            </div>
-                        )
-                    })}
+                            )
+                        })}
                     </div>
                     <div>
                         <p><b>Líder del proyecto:</b></p><UserName id={leader}/>
@@ -148,7 +130,7 @@ const ProjectView = ({props: {match:{params:{id}}}}) => {
         return(
             <div id="body">
                 <div id="projectV">
-                    <h4>Este es el proyecto {title}</h4>
+                    <h4>{title}</h4>
                     <p>Bienvenido/a a la página principal del proyecto, desde aquí podrás revisar los avances.</p>
                     <p><b>Descripción del proyecto:</b><br/>{description}</p>
                     <p><b>Objetivo general del proyecto:</b><br/>{general_objective}</p>

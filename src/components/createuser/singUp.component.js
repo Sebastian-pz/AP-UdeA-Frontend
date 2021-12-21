@@ -60,11 +60,10 @@ const SingUp = () => {
                 </div>
                 <div>
                     <label id="label">A qué rol aspira</label><br/>
-                    <input id="input1" autoComplete="off" list="roles" ref={role => user.role = role} placeholder="Student" required/>
-                    <datalist id="roles">
-                        <option value="Student"/>
-                        <option value="Leader"/>
-                    </datalist>
+                    <select id="input1" ref={role => user.role = role} required>
+                        <option value="Student">Estudiante</option>
+                        <option value="Leader">Líder</option>
+                    </select>
                 </div>
                 <div><button type="submit" id="btnm" className="btn btn-primary">Crear usuario</button></div>
 
