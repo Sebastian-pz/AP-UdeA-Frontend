@@ -1,27 +1,35 @@
 import {gql, useMutation} from '@apollo/client'
+import decodeToken from '../../controller/token/decodeToken';
 
+const token = decodeToken()
+let user = token.id
 
-const ADDPROGRESS_MUTATION = gql`
-    mutation progress($id:String, $progress:String){
-        addprogress(id:$id , progress:$progress)
+const CREATEPROGRESS_MUTATION = gql`
+    mutation newPro($id:String, $progress:String, $author:String, $comment:String){
+        addprogress(id:$id, newProgress:{progress:$progress,author:$author,comment:$comment})
     }
-`;
+`
+
 const AddProgress = (id) => {
 
-    const [addprogress] = useMutation(ADDPROGRESS_MUTATION)
-    let progress = "";
+    const [addprogress] = useMutation(CREATEPROGRESS_MUTATION)
+
+    let progress = {
+        progress:"",
+        author:(user),
+        comment:"Aun no se ha realizado ningún comentario"
+    }
+
 
     const add = (e) => {
         e.preventDefault();
-        //console.log(progress.value)
-        //console.log(id.id)
         addprogress({variables:{
-            id:id.id,
-            progress:progress.value
-        }}).then(e => {
-            alert("Progreso añadido con éxito")
+            id:id.id,progress: progress.progress.value,author: progress.author,comment: progress.comment
+        }}).then(u => {
+            alert("Progreso añadido")
             window.location.reload()
-        }).catch( err => alert("Error en el proceso"))
+        })
+            .catch(err => alert("Sucedió un error en la creación " + err))
     }
 
     return (
@@ -29,7 +37,7 @@ const AddProgress = (id) => {
         <div id="table-progress">
             <h4>Añadir progreso</h4>
             <div>
-                <textarea autoComplete='off' placeholder='¿Cuál es su progreso?' ref={p => progress = p} type="text" id="input-progress"/>
+                <textarea autoComplete='off' placeholder='¿Cuál es su progreso?' ref={p => progress.progress = p} type="text" id="input-progress"/>
                 <br/>
                 <button onClick={add} className='btn btn-primary'>Enviar</button>
             </div>

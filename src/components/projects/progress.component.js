@@ -1,0 +1,5 @@
+
+
+const ViewProgress = (id, p) =>{
+    
+}
